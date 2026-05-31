@@ -49,17 +49,24 @@ export function DocsSidebar({ activeSection }: DocsSidebarProps) {
           <ul className="absolute left-0 right-0 top-full mt-1 bg-white border border-clinical-border rounded shadow-lg max-h-60 overflow-y-auto z-50 mx-4 sm:mx-6">
             {DOCS_SECTIONS.map((section) => (
               <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center px-4 py-3 text-sm min-h-[44px] ${
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    const el = document.getElementById(section.id);
+                    if (el) {
+                      const offset = 120;
+                      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+                      window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`w-full text-left flex items-center px-4 py-3 text-sm min-h-[44px] ${
                     activeSection === section.id
                       ? 'bg-clinical-bg-subtle text-[#244B73] font-medium'
                       : 'text-clinical-slate hover:bg-clinical-bg'
                   }`}
                 >
                   {section.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
