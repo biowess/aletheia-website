@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Aletheia: Clinical Workstation — Website</h1>
+<h1>Aletheia: Clinical Workstation - Website</h1>
 
 <p><em>The official landing page for Aletheia, evidence-grounded AI diagnostic reasoning built for clinical precision.</em></p>
 
@@ -25,7 +25,7 @@
 
 ## What is this?
 
-This is the **marketing and documentation website** for [Aletheia: Clinical Workstation](https://github.com/biowess/aletheia) — a local-first AI diagnostic reasoning tool for clinical practitioners.
+This is the **marketing and documentation website** for [Aletheia: Clinical Workstation](https://github.com/biowess/aletheia): a local-first AI diagnostic reasoning tool for clinical practitioners.
 
 Everything about the product — features, screenshots, design philosophy, and how to get started — is covered on the website itself.
 
