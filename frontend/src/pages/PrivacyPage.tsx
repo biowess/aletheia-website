@@ -152,58 +152,41 @@ function KeyCallout({
   )
 }
 
-/* ─── SVG icons ──────────────────────────────────────────────────────────── */
+/* ─── SVG icons (stroke-style, matching FeaturesPage) ────────────────────── */
 
 const IconShield = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path
-      fillRule="evenodd"
-      d="M9.661 2.237a.531.531 0 01.678 0 11.947 11.947 0 007.078 2.749.5.5 0 01.479.425c.069.52.104 1.05.104 1.589 0 5.162-3.26 9.563-7.834 11.256a.48.48 0 01-.332 0C5.26 16.563 2 12.162 2 7c0-.538.035-1.07.104-1.589a.5.5 0 01.48-.425 11.947 11.947 0 007.077-2.749z"
-      clipRule="evenodd"
-    />
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>
 )
 
 const IconDatabase = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579c.57-.573.222-1.473-.554-1.473H7.255a41.801 41.801 0 01-2.215-.227V9.539c1.397.167 2.817.256 4.253.274a.75.75 0 00.762-.757.75.75 0 00-.757-.762 39.24 39.24 0 01-4.01-.264v-.91c1.21.093 2.436.149 3.679.168a.75.75 0 00.761-.757.75.75 0 00-.757-.762A40.284 40.284 0 015.25 6.36V5.426c0-.394.228-.741.63-.813A37.268 37.268 0 0110 4.262c2.06 0 4.105.183 6.12.552.401.072.63.42.63.812v.915a37.6 37.6 0 01-3.502-.157.75.75 0 00-.104 1.497 39.122 39.122 0 004.024.238v.887a37.46 37.46 0 01-3.502-.157.75.75 0 00-.103 1.497 38.999 38.999 0 004.017.236l.007.001c.77.01 1.283.88.952 1.574L15 13.7c.23-.027.456-.056.682-.088C17.007 13.344 18 12.087 18 10.574V5.426c0-1.412-.993-2.67-2.43-2.902A44.958 44.958 0 0010 2z" />
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+    <path d="M3 5V19A9 3 0 0 0 21 19V5"/>
+    <path d="M3 12A9 3 0 0 0 21 12"/>
   </svg>
 )
 
 const IconEye = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-    <path
-      fillRule="evenodd"
-      d="M.664 10.59a1.651 1.651 0 010-1.18l.392-.865C2.408 6.28 5.892 4.5 10 4.5c4.109 0 7.592 1.78 8.944 3.946l.392.864a1.652 1.652 0 010 1.18l-.392.865C17.592 13.72 14.108 15.5 10 15.5c-4.108 0-7.592-1.78-8.944-3.946l-.392-.864z"
-      clipRule="evenodd"
-    />
-  </svg>
-)
-
-const IconGlobe = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path
-      fillRule="evenodd"
-      d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.5-2.09A6.5 6.5 0 012.1 11h1.65a1.5 1.5 0 001.5 1.5v.5a1.5 1.5 0 001.5 1.5v.88a.5.5 0 00.5.5h.75A6.51 6.51 0 018.5 15.91zm1.83-10.6a.5.5 0 01-.33.47V7h-.5a.5.5 0 01-.5-.5V5.5A.5.5 0 019.5 5h.75a.5.5 0 01.08.31zM14 15.5a.5.5 0 01-.5.5h-.5a.5.5 0 01-.5-.5v-.5a1.5 1.5 0 001.5-1.5h1.65A6.516 6.516 0 0114 15.5zm2.95-4.5a6.5 6.5 0 00-6.45-7.49V5h.5a.5.5 0 010 1H10v1a1 1 0 001 1h1.5a1.5 1.5 0 011.5 1.5v.5a.5.5 0 01-.5.5H12a.5.5 0 010-1v-.5H10a2 2 0 01-2-2V6.04A6.494 6.494 0 013.05 11H4.5a1.5 1.5 0 001.5 1.5H7a.5.5 0 010 1H5.5a2.5 2.5 0 01-2.45-2H1.6a6.5 6.5 0 0015.35 0h-1.45a2.5 2.5 0 01-2.45 2H12a.5.5 0 010-1h.5a1.5 1.5 0 001.5-1.5H16a.5.5 0 010 1H14.5A.5.5 0 0014 12v-.5a.5.5 0 01.5-.5h2a6.517 6.517 0 00.45-1z"
-      clipRule="evenodd"
-    />
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
   </svg>
 )
 
 const IconNoUser = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <line x1="17" y1="8" x2="23" y2="14"/>
+    <line x1="23" y1="8" x2="17" y2="14"/>
   </svg>
 )
 
 const IconSparkle = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
-    <path
-      fillRule="evenodd"
-      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.83-4.4z"
-      clipRule="evenodd"
-    />
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 )
 
@@ -278,18 +261,34 @@ export default function PrivacyPage() {
           ].map(({ icon, label, detail }) => (
             <div
               key={label}
+              className="privacy-summary-card"
               style={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D6DDE4',
-                borderRadius: 4,
-                padding: '16px 18px',
+                borderRadius: 6,
+                padding: '18px 18px',
                 boxShadow: '0 1px 3px 0 rgba(22,44,65,0.06)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 8,
+                gap: 10,
+                transition: 'border-color 180ms ease, box-shadow 180ms ease',
               }}
             >
-              <div style={{ color: '#1B5FA8', width: 20, height: 20 }} aria-hidden="true">
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 6,
+                  backgroundColor: '#F5F8FB',
+                  border: '1px solid #D7E2EC',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#244B73',
+                  flexShrink: 0,
+                }}
+                aria-hidden="true"
+              >
                 {icon}
               </div>
               <p
@@ -675,6 +674,7 @@ export default function PrivacyPage() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Link
               to="/faq"
+              className="btn-light btn-interactive"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -683,12 +683,8 @@ export default function PrivacyPage() {
                 fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
                 fontWeight: 500,
                 fontSize: 13,
-                color: '#162C41',
-                backgroundColor: '#F5F8FB',
-                border: '1px solid #D6DDE4',
                 borderRadius: 4,
                 textDecoration: 'none',
-                transition: 'border-color 150ms ease, background-color 150ms ease',
                 cursor: 'pointer',
               }}
             >
@@ -698,6 +694,7 @@ export default function PrivacyPage() {
               href="https://github.com/biowess/aletheia/issues"
               target="_blank"
               rel="noopener noreferrer"
+              className="btn-dark btn-interactive"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -706,12 +703,8 @@ export default function PrivacyPage() {
                 fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
                 fontWeight: 600,
                 fontSize: 13,
-                color: '#FFFFFF',
-                backgroundColor: '#162C41',
-                border: '1px solid #162C41',
                 borderRadius: 4,
                 textDecoration: 'none',
-                transition: 'background-color 150ms ease',
                 cursor: 'pointer',
               }}
             >
@@ -721,11 +714,11 @@ export default function PrivacyPage() {
         </div>
       </div>
 
-      {/* ── Inline hover style for footer nav links ── */}
+      {/* ── Privacy page micro-interaction styles ── */}
       <style>{`
-        .privacy-nav-btn:hover {
-          border-color: #1B5FA8 !important;
-          background-color: #EFF6FF !important;
+        .privacy-summary-card:hover {
+          border-color: #244B73 !important;
+          box-shadow: 0 4px 12px 0 rgba(22,44,65,0.10) !important;
         }
       `}</style>
     </main>
