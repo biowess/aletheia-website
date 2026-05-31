@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoWhite from '../assets/logowhite.png';
+import logoWhite from '../../assets/logowhite.png';
 
 export default function Footer({ analyticsNote = "This site uses Cloudflare Web Analytics — cookie-free, no cross-site tracking, no personal data collected." }: { analyticsNote?: string }) {
   return (
