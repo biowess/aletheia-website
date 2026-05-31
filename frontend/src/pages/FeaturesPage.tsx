@@ -112,6 +112,7 @@ const featuresData = [
 
 export default function FeaturesPage() {
   const [activeSection, setActiveSection] = useState<string>(featuresData[0].id);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -167,17 +168,46 @@ export default function FeaturesPage() {
             
             {/* Mobile Jump To Dropdown */}
             <div className="lg:hidden sticky top-14 z-30 bg-white py-3 border-b border-[#D7E2EC] -mx-4 px-4">
-              <label htmlFor="feature-jump" className="sr-only">Jump to section</label>
-              <select 
-                id="feature-jump"
-                className="w-full bg-[#F5F8FB] border border-[#D7E2EC] text-[#162C41] text-sm rounded px-3 py-2 outline-none focus:ring-2 focus:ring-[#244B73]"
-                value={activeSection}
-                onChange={(e) => scrollToSection(e.target.value)}
-              >
-                {featuresData.map(feature => (
-                  <option key={feature.id} value={feature.id}>{feature.title}</option>
-                ))}
-              </select>
+              <div className="relative">
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="w-full flex items-center justify-between bg-white border border-[#D7E2EC] rounded px-3 py-2.5 text-sm text-[#162C41] min-h-[44px]"
+                >
+                  <span className="font-medium">
+                    Jump to: {featuresData.find(f => f.id === activeSection)?.title || featuresData[0].title}
+                  </span>
+                  <svg aria-hidden="true" focusable="false" className={`w-4 h-4 transition-transform ${mobileMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {mobileMenuOpen && (
+                  <ul className="absolute left-0 right-0 top-full mt-1 bg-white border border-[#D7E2EC] rounded shadow-lg max-h-60 overflow-y-auto z-50">
+                    {featuresData.map((feature) => (
+                      <li key={feature.id}>
+                        <button
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            const el = document.getElementById(feature.id);
+                            if (el) {
+                              const offset = 120;
+                              const top = el.getBoundingClientRect().top + window.scrollY - offset;
+                              window.scrollTo({ top, behavior: 'smooth' });
+                            }
+                          }}
+                          className={`w-full text-left flex items-center px-4 py-3 text-sm min-h-[44px] ${
+                            activeSection === feature.id
+                              ? 'bg-[#F5F8FB] text-[#244B73] font-medium'
+                              : 'text-[#4F606F] hover:bg-[#F5F8FB]'
+                          }`}
+                        >
+                          {feature.title}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
 
             {/* Sidebar Navigation (Desktop >= 1024px) */}
