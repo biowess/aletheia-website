@@ -134,11 +134,11 @@ export default function InstallPage() {
 
           {/* Notices */}
           <div className="sm:pl-14 space-y-4">
-            <Callout variant="info" className="!bg-slate-50 !border-slate-300">
+            <Callout variant="info" showIcon={false} className="!bg-slate-50 !border-slate-300">
               <span className="font-semibold text-slate-700">Uninstall note:</span> To remove Aletheia: <code className="bg-slate-200 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800">./uninstall.sh</code>
             </Callout>
 
-            <Callout variant="warning">
+            <Callout variant="warning" showIcon={false}>
               <span className="font-semibold">FUSE dependency notice:</span> AppImages require FUSE/libfuse2. If not installed: <code className="font-mono text-sm bg-white/50 px-1 py-0.5 rounded">sudo apt install libfuse2</code> (Ubuntu/Debian) or <code className="font-mono text-sm bg-white/50 px-1 py-0.5 rounded">sudo dnf install fuse</code> (Fedora).
             </Callout>
           </div>
