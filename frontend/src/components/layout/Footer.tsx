@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
+import { Link } from 'react-router-dom';
+import logowhite from '@/assets/logowhite.png';
 
 export default function Footer({ analyticsNote = "This site uses Cloudflare Web Analytics — cookie-free, no cross-site tracking, no personal data collected." }: { analyticsNote?: string }) {
   return (
@@ -116,7 +115,7 @@ export default function Footer({ analyticsNote = "This site uses Cloudflare Web 
             {/* Column 1 - Brand */}
             <div className="aletheia-footer-col">
               <img
-                src="${BASE}/src/assets/logowhite.png"
+                src={logowhite}
                 alt="Aletheia"
                 style={{ height: 28, width: 'auto', alignSelf: 'flex-start', transform: 'translateX(-8px)' }}
               />
