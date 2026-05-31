@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
-import logowhite from '@/assets/logowhite.png'
 
-export default function Footer({ analyticsNote = "This site uses privacy-first, cookie-free analytics." }: { analyticsNote?: string }) {
+export default function Footer({ analyticsNote = "This site uses Cloudflare Web Analytics — cookie-free, no cross-site tracking, no personal data collected." }: { analyticsNote?: string }) {
   return (
     <>
       <style>{`
@@ -114,8 +113,9 @@ export default function Footer({ analyticsNote = "This site uses privacy-first, 
 
             {/* Column 1 - Brand */}
             <div className="aletheia-footer-col">
+              {/* REPLACE: Use frontend/src/assets/logowhite.png (white logo for dark background). Height: 28px. */}
               <img
-                src={logowhite}
+                src="/src/assets/logowhite.png"
                 alt="Aletheia"
                 style={{ height: 28, width: 'auto', alignSelf: 'flex-start', transform: 'translateX(-8px)' }}
               />
@@ -176,6 +176,9 @@ export default function Footer({ analyticsNote = "This site uses privacy-first, 
               <a href="https://github.com/biowess/aletheia/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" aria-label="License (opens in new tab)" className="aletheia-footer-link">
                 License <span aria-hidden="true" style={{ marginLeft: 4, fontSize: 12 }}>↗</span>
               </a>
+              <Link to="/privacy" className="aletheia-footer-link">
+                Privacy Policy
+              </Link>
 
               <div style={{
                 fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
