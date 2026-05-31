@@ -5,9 +5,10 @@ interface CalloutProps {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  showIcon?: boolean;
 }
 
-export function Callout({ variant = 'info', title, children, className = '' }: CalloutProps) {
+export function Callout({ variant = 'info', title, children, className = '', showIcon = true }: CalloutProps) {
   const styles = {
     info: 'bg-slate-100 border-l-4 border-slate-400 text-slate-800',
     warning: 'bg-[#FFF8ED] border-l-4 border-[#C58A2B] text-amber-900',
@@ -41,9 +42,11 @@ export function Callout({ variant = 'info', title, children, className = '' }: C
   return (
     <div className={`p-4 rounded-r-md ${styles[variant]} ${className}`}>
       <div className="flex">
-        <div className={`mr-3 ${iconColors[variant]}`}>
-          {icons[variant]}
-        </div>
+        {showIcon && (
+          <div className={`mr-3 ${iconColors[variant]}`}>
+            {icons[variant]}
+          </div>
+        )}
         <div>
           {title && <h3 className="text-sm font-semibold mb-1">{title}</h3>}
           <div className="text-sm">
