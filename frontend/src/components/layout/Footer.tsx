@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logowhite from '@/assets/logowhite.png'
 
 export default function Footer({ analyticsNote = "This site uses privacy-first, cookie-free analytics." }: { analyticsNote?: string }) {
   return (
@@ -114,7 +115,7 @@ export default function Footer({ analyticsNote = "This site uses privacy-first, 
             {/* Column 1 - Brand */}
             <div className="aletheia-footer-col">
               <img
-                src="/docs/logowhite.png"
+                src={logowhite}
                 alt="Aletheia"
                 style={{ height: 28, width: 'auto', alignSelf: 'flex-start', transform: 'translateX(-8px)' }}
               />
