@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionItem, CodeBlock, DataTable, ExternalLink, PageHeader, RippleButton } from '../components/ui';
 import { track } from '../lib/analytics';
 import SEO from '../components/SEO';
-import hospitalImg from '../components/assets/docs/hospital.png';
+import hospitalImg from '../components/assets/docs/hospital.webp';
 
 const DownloadPage: React.FC = () => {
   return (
