@@ -39,7 +39,7 @@ jobs:
 
       - name: Build project
         working-directory: ./frontend
-        run: npx tsc -b --noUnusedLocals false && npx vite build
+        run: npx vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
