@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logowhite from '@/frontend/src/assets/logowhite.png';
+import logoWhite from '../assets/logowhite.png';
 
 export default function Footer({ analyticsNote = "This site uses Cloudflare Web Analytics — cookie-free, no cross-site tracking, no personal data collected." }: { analyticsNote?: string }) {
   return (
@@ -115,7 +115,7 @@ export default function Footer({ analyticsNote = "This site uses Cloudflare Web 
             {/* Column 1 - Brand */}
             <div className="aletheia-footer-col">
               <img
-                src={logowhite}
+                src={logoWhite}
                 alt="Aletheia"
                 style={{ height: 28, width: 'auto', alignSelf: 'flex-start', transform: 'translateX(-8px)' }}
               />
