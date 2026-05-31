@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 
 export default function Footer({ analyticsNote = "This site uses Cloudflare Web Analytics — cookie-free, no cross-site tracking, no personal data collected." }: { analyticsNote?: string }) {
   return (
@@ -113,9 +115,8 @@ export default function Footer({ analyticsNote = "This site uses Cloudflare Web 
 
             {/* Column 1 - Brand */}
             <div className="aletheia-footer-col">
-              {/* REPLACE: Use frontend/src/assets/logowhite.png (white logo for dark background). Height: 28px. */}
               <img
-                src="/src/assets/logowhite.png"
+                src="${BASE}/src/assets/logowhite.png"
                 alt="Aletheia"
                 style={{ height: 28, width: 'auto', alignSelf: 'flex-start', transform: 'translateX(-8px)' }}
               />
