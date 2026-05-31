@@ -13,6 +13,7 @@ const InstallPage     = lazy(() => import('./pages/InstallPage'))
 const DocsPage        = lazy(() => import('./pages/DocsPage'))
 const DownloadPage    = lazy(() => import('./pages/DownloadPage'))
 const FaqPage         = lazy(() => import('./pages/FaqPage'))
+const PrivacyPage     = lazy(() => import('./pages/PrivacyPage'))
 
 import PageSkeleton from './components/ui/PageSkeleton'
 
@@ -44,6 +45,7 @@ function AnimatedRoutes() {
         <Route path="/docs"        element={<motion.div variants={variants} initial="initial" animate="animate" exit="exit" transition={{ type: 'spring', duration: 0.22, bounce: 0 }}><DocsPage /></motion.div>} />
         <Route path="/download"    element={<motion.div variants={variants} initial="initial" animate="animate" exit="exit" transition={{ type: 'spring', duration: 0.22, bounce: 0 }}><DownloadPage /></motion.div>} />
         <Route path="/faq"         element={<motion.div variants={variants} initial="initial" animate="animate" exit="exit" transition={{ type: 'spring', duration: 0.22, bounce: 0 }}><FaqPage /></motion.div>} />
+        <Route path="/privacy"     element={<motion.div variants={variants} initial="initial" animate="animate" exit="exit" transition={{ type: 'spring', duration: 0.22, bounce: 0 }}><PrivacyPage /></motion.div>} />
       </Routes>
     </AnimatePresence>
   )
