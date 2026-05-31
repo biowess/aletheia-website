@@ -1,0 +1,350 @@
+/**
+ * Global stylesheet — Clinical Frost Marketing Site
+ * Import order matters:
+ *   1. Design tokens (CSS custom properties)
+ *   2. Google Fonts
+ *   3. Tailwind directives
+ *   4. Global base styles
+ */
+
+/* 1. Design tokens */
+@import './tokens.css';
+
+/* 2. Google Fonts — IBM Plex Sans, EB Garamond, IBM Plex Mono */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+/* 3. Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── 4. Global Base Styles ─────────────────────────────────────────────────── */
+
+/*
+ * Force light color-scheme unconditionally.
+ * This is the primary mechanism — the meta tag + color-scheme property together
+ * ensure the browser never renders dark system UI or inverts colors.
+ */
+:root {
+  color-scheme: light;
+}
+
+/*
+ * Explicitly override dark mode preference at the OS level.
+ * Even if the user's OS is in dark mode, Aletheia stays light.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+    background-color: #F5F8FB;
+    color: #162C41;
+  }
+}
+
+/* Global reset and defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth scrolling with reduced-motion fallback */
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent iOS tap highlight */
+  -webkit-tap-highlight-color: transparent;
+  background-color: #F5F8FB !important;
+  color: #162C41 !important;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  background-color: var(--color-bg) !important;
+  color: var(--color-text-primary) !important;
+
+  /* Anti-aliasing for crisp text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+
+  /* Ensure full page height */
+  min-height: 100vh;
+}
+
+/* Remove default margin/padding on common elements */
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Typography defaults ─────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+/* Report/editorial headings use the EB Garamond stack */
+.font-report h1,
+.font-report h2,
+.font-report h3 {
+  font-family: var(--font-report);
+  letter-spacing: 0;
+}
+
+/* Monospace elements */
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-standard);
+}
+
+a:hover:not(.btn-dark):not(.btn-light):not(.btn-interactive) {
+  color: var(--color-accent-hover);
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 75, 115, 0.20);
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Images & Media ──────────────────────────────────────────────────────── */
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Utility: Custom Scrollbar ──────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-mid);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-muted);
+}
+
+/* ─── Utility: Selection ─────────────────────────────────────────────────── */
+
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-navy);
+}
+
+/* ─── Responsive: No Horizontal Overflow ────────────────────────────────── */
+
+html {
+  overflow-x: hidden;
+}
+
+/* ─── Utility: Hide Scrollbar (cross-browser) ───────────────────────────── */
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Utility: Touch-friendly horizontal scroll ─────────────────────────── */
+
+.scroll-x-touch {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ─── ScreenshotShowcase: Tab gradient fade on mobile ────────────────────── */
+
+.showcase-tab-wrapper {
+  position: relative;
+}
+
+@media (max-width: 639px) {
+  .showcase-tab-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, #F5F8FB);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* ─── Responsive Section Padding ────────────────────────────────────────── */
+
+.section-py {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+  .section-py {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.card-p {
+  padding: 24px;
+}
+
+@media (max-width: 767px) {
+  .card-p {
+    padding: 16px;
+  }
+}
+
+/* ─── Mobile-first page horizontal gutter ───────────────────────────────── */
+
+@media (max-width: 767px) {
+  .aletheia-section-inner,
+  .aletheia-page-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ─── Shimmer Animation ──────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ─── Micro-interactions & Physics ───────────────────────────────────────── */
+
+/* Button hover/active physics */
+.btn-interactive {
+  transition: box-shadow 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-dark {
+  background-color: #162C41;
+  color: #FFFFFF !important;
+}
+
+.btn-dark:hover,
+.btn-dark:focus-visible {
+  background-color: #244B73;
+  color: #FFFFFF !important;
+}
+
+.btn-light {
+  background-color: transparent;
+  color: #162C41 !important;
+  border: 1px solid #D7E2EC;
+}
+
+.btn-light:hover,
+.btn-light:focus-visible {
+  background-color: #F5F8FB;
+  color: #162C41 !important;
+}
+
+.btn-interactive:hover {
+  /* No translation as requested */
+}
+
+.btn-interactive:active {
+  transition-duration: 80ms;
+}
+
+/* Link underline animation */
+.link-animated {
+  position: relative;
+  transition: color 120ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-animated::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -2px;
+  height: 2px;
+  background-color: #244B73;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease-out;
+}
+
+.link-animated:hover::after,
+.link-animated:focus-visible::after,
+.link-animated.active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-interactive {
+    transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .link-animated {
+    transition: color 120ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .link-animated::after {
+    transition: none !important;
+  }
+}

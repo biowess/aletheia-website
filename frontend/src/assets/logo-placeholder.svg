@@ -1,0 +1,22 @@
+<!-- REPLACE: Use docs/aletheia.png (full logo, white background) resized to height 32px.
+     Generation note: The logo is a horizontal lockup. Preserve aspect ratio. Do not add rounding. -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 160 32"
+  width="160"
+  height="32"
+  role="img"
+  aria-label="Aletheia"
+>
+  <text
+    x="0"
+    y="22"
+    font-family="'IBM Plex Sans', system-ui, sans-serif"
+    font-weight="700"
+    font-size="18"
+    letter-spacing="2"
+    fill="#162C41"
+    text-rendering="geometricPrecision"
+  >ALETHEIA</text>
+  <line x1="0" y1="31" x2="160" y2="31" stroke="#D7E2EC" stroke-width="1"/>
+</svg>
