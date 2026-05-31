@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import PageWrapper from './components/layout/PageWrapper'
 import { track } from './lib/analytics'
@@ -56,7 +56,7 @@ function AnimatedRoutes() {
  */
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollProgress />
       <AnalyticsTracker />
       <Suspense fallback={<PageSkeleton />}>
@@ -64,6 +64,6 @@ export default function App() {
           <AnimatedRoutes />
         </PageWrapper>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
